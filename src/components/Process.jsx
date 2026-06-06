@@ -2,38 +2,43 @@ import { motion } from 'framer-motion'
 
 const steps = [
   {
-    title: 'Consultation',
-    description: 'We understand your business goals and requirements',
+    title: 'Discovery and Strategy',
+    description: 'We dive deep into your business goals to create a customized strategy that guarantees results.',
   },
   {
-    title: 'Strategy Planning',
-    description: 'We create a detailed roadmap and strategy for your project',
+    title: 'UI/UX Design',
+    description: 'We craft stunning, user-centric interfaces that captivate your audience and drive engagement.',
   },
   {
-    title: 'Development & Automation',
-    description: 'We build your website and set up automation systems',
+    title: 'Custom Web Development',
+    description: 'We build high-performance, scalable websites tailored to your unique brand requirements.',
   },
   {
-    title: 'Launch & Scale',
-    description: 'We launch your project and help you scale your business',
+    title: 'SEO & Performance Optimization',
+    description: 'We ensure your site ranks high on search engines and loads at lightning speed.',
   },
 ]
 
 function Process() {
   return (
-    <section id="process" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.h2
+    <section id="process" className="py-24 bg-darker relative">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center text-4xl font-bold"
+          className="mb-16 text-center"
         >
-          <span className="text-gradient">How We Work</span>
-        </motion.h2>
+          <span className="text-primary text-sm font-bold uppercase tracking-wider">Process</span>
+          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+            Our Comprehensive <span className="text-gradient">Process</span>
+          </h2>
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+            We ensure your project gets handled with the utmost care from start to finish.
+          </p>
+        </motion.div>
 
-        <div className="relative grid gap-6 md:grid-cols-4">
-          <div className="absolute left-0 right-0 top-8 hidden border-t border-dashed border-white/20 md:block" />
+        <div className="grid gap-6 md:grid-cols-2">
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -41,13 +46,18 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative z-10 glass rounded-2xl p-6"
+              className="glass-card rounded-3xl p-8 relative overflow-hidden group hover:glow-border border border-white/5"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-lg font-bold">
-                {index + 1}
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                 <span className="text-8xl font-black text-primary">0{index + 1}</span>
               </div>
-              <h3 className="text-xl font-semibold">{step.title}</h3>
-              <p className="mt-2 text-slate-300">{step.description}</p>
+              <div className="relative z-10">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary font-bold border border-primary/30">
+                  {index + 1}
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-slate-400 leading-relaxed max-w-[90%]">{step.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>

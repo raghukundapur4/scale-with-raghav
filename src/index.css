@@ -2,25 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================
+   Base / Reset
+   ===================== */
 html {
+  /* Native smooth scrolling — no third-party scroll hijacking */
   scroll-behavior: smooth;
+  background-color: #050505;
+  /* Hide scrollbar on Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+}
+
+/* Hide scrollbar on Chrome/Safari but keep it functional */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.6);
 }
 
 body {
   @apply bg-dark text-light font-sans antialiased;
+  /* Prevent layout shift from scrollbar appearing */
+  overflow-x: hidden;
 }
 
+/* Smooth text selection highlight */
+::selection {
+  background-color: rgba(16, 185, 129, 0.25);
+  color: #fff;
+}
+
+/* =====================
+   Layout Utilities
+   ===================== */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glow-blue {
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.35);
+.glass-card {
+  background: linear-gradient(145deg, rgba(23, 23, 23, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* =====================
+   Glow Effects
+   ===================== */
+.glow-primary {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
+}
+
+.glow-border {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* =====================
+   Text & Gradient
+   ===================== */
 .text-gradient {
-  @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+}
+
+/* =====================
+   Scroll Anchor Offset
+   Compensates for fixed navbar height
+   ===================== */
+[id] {
+  scroll-margin-top: 80px;
 }

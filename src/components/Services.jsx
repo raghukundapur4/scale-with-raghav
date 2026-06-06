@@ -1,44 +1,55 @@
 import { motion } from 'framer-motion'
-import { Check, MessageCircle, Monitor, TrendingUp } from 'lucide-react'
+import { Monitor, PenTool, Search, Share2 } from 'lucide-react'
 
 const services = [
   {
     icon: Monitor,
-    title: 'Website Development',
-    description: 'Premium responsive websites designed to convert visitors into paying clients.',
-    features: ['Responsive Design', 'SEO Optimized', 'Fast Performance', 'Landing Pages', 'Business Websites'],
-    iconClass: 'text-blue-400',
+    title: 'Custom Websites',
+    description: 'We build premium, high-converting websites and Shopify stores tailored to your brand.',
+    className: 'md:col-span-2 md:row-span-1 bg-gradient-to-br from-grayCustom to-dark border-primary/20',
   },
   {
-    icon: MessageCircle,
-    title: 'WhatsApp Automation',
-    description: 'Automate engagement and lead nurturing with robust WhatsApp systems.',
-    features: ['Automated Replies', 'Lead Follow-up', 'WhatsApp Funnels', 'CRM Integration', 'Broadcast Automation'],
-    iconClass: 'text-emerald-400',
+    icon: PenTool,
+    title: 'UI/UX Design',
+    description: 'Stunning interfaces that captivate users and ensure seamless experiences.',
+    className: 'md:col-span-1 md:row-span-1 bg-darker border-white/5',
   },
   {
-    icon: TrendingUp,
-    title: 'Lead Generation',
-    description: 'Build repeatable lead acquisition funnels that scale your pipeline consistently.',
-    features: ['Meta Ads Funnels', 'Landing Page Optimization', 'Lead Capture Systems', 'CRM Setup', 'Conversion Tracking'],
-    iconClass: 'text-purple-400',
+    icon: Search,
+    title: 'SEO & Performance',
+    description: 'Dominate search rankings and ensure lightning-fast page load speeds.',
+    className: 'md:col-span-1 md:row-span-1 bg-darker border-white/5',
+  },
+  {
+    icon: Share2,
+    title: 'Social Media Management',
+    description: 'Engaging content and strategies to grow your brand presence online.',
+    className: 'md:col-span-2 md:row-span-1 bg-gradient-to-tr from-dark to-grayCustom border-primary/10',
   },
 ]
 
 function Services() {
   return (
-    <section id="services" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.h2
+    <section id="services" className="py-24 relative overflow-hidden">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 h-96 w-96 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
+      
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14 text-center text-4xl font-bold"
+          className="mb-16 text-center"
         >
-          <span className="text-gradient">Our Services</span>
-        </motion.h2>
+          <span className="text-primary text-sm font-bold uppercase tracking-wider">Services</span>
+          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+            What We Do <span className="text-gradient">Best</span>
+          </h2>
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+            We offer full suite digital services designed to enhance your brand presence.
+          </p>
+        </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 lg:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -46,24 +57,17 @@ function Services() {
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.12 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass rounded-2xl p-6 transition duration-300 hover:scale-[1.02] hover:border-blue-400/40"
+                className={`glass-card rounded-3xl p-8 flex flex-col justify-between group transition-all duration-300 hover:glow-border border ${service.className}`}
               >
-                <Icon className={`${service.iconClass} mb-4`} size={32} />
-                <h3 className="text-2xl font-semibold">{service.title}</h3>
-                <p className="mt-3 text-slate-300">{service.description}</p>
-                <ul className="mt-5 space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-slate-200">
-                      <Check size={16} className="text-blue-400" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a href="https://wa.me/919999999999" className="mt-6 inline-block font-semibold text-blue-300 hover:text-blue-200">
-                  Get Started →
-                </a>
+                <div>
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-darker transition-all duration-300">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{service.description}</p>
+                </div>
               </motion.article>
             )
           })}
