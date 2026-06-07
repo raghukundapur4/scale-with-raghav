@@ -30,7 +30,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 h-96 w-96 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
       
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -41,7 +41,7 @@ function Services() {
           className="mb-16 text-center"
         >
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Services</span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             What We Do <span className="text-gradient">Best</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">

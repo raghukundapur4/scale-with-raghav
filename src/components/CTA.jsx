@@ -3,7 +3,7 @@ import { BookOpen, Check } from 'lucide-react'
 
 function CTA() {
   return (
-    <section className="px-4 py-24 sm:px-6 lg:px-8">
+    <section className="px-4 py-16 sm:px-6 lg:px-8 md:py-24">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-br from-dark to-grayCustom border border-white/10 p-8 sm:p-14 lg:p-20 glow-border">
         {/* Glow effect */}
         <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full bg-primary/5 blur-[100px]" />
@@ -15,7 +15,7 @@ function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl leading-tight">
+            <h2 className="text-3xl font-extrabold text-white md:text-4xl lg:text-5xl leading-tight">
               Say Hello to Guaranteed Clients Every Month By Designing A <span className="text-gradient">Premium Website</span>
             </h2>
             <p className="mt-6 text-lg text-slate-400 leading-relaxed">

@@ -10,7 +10,7 @@ const company = [
 
 function Footer() {
   return (
-    <footer className="bg-darker py-14 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-darker py-10 md:py-14 relative overflow-hidden border-t border-white/5">
       <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 h-64 w-[800px] rounded-[100%] bg-primary/10 blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">

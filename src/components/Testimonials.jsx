@@ -24,7 +24,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-darker">
+    <section id="testimonials" className="py-16 md:py-24 bg-darker">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -33,7 +33,7 @@ function Testimonials() {
           className="mb-16 text-center"
         >
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Clients</span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Trusted by Growing <span className="text-gradient">Brands</span>
           </h2>
         </motion.div>

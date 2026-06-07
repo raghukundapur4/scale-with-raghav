@@ -12,7 +12,7 @@ const reasons = [
 
 function WhyUs() {
   return (
-    <section id="why-us" className="py-24 relative">
+    <section id="why-us" className="py-16 md:py-24 relative">
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,7 +23,7 @@ function WhyUs() {
           className="mb-16 text-center"
         >
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Perks</span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Why Work <span className="text-gradient">With Us?</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">

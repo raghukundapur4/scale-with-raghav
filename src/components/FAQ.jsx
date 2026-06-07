@@ -25,13 +25,13 @@ function FAQ() {
   const [active, setActive] = useState(null)
 
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="py-20 md:py-32">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 text-center text-4xl font-bold"
+          className="mb-12 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-white"
         >
           <span className="text-gradient">Frequently Asked Questions</span>
         </motion.h2>

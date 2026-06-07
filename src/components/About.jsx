@@ -8,7 +8,7 @@ const stats = [
 
 function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -16,7 +16,7 @@ function About() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h2 className="text-4xl font-bold text-gradient">About Me</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">About Me</h2>
           <p className="text-slate-300">
             Hi, I'm Raghav — a backend engineer and automation specialist focused on helping businesses build reliable
             websites, streamline operations, and scale lead generation with practical systems.
@@ -30,7 +30,7 @@ function About() {
             ))}
           </div>
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/918971267102"
             className="inline-block rounded-xl bg-primary px-5 py-3 font-semibold text-white transition hover:bg-blue-500"
           >
             Let's Connect
@@ -50,7 +50,7 @@ function About() {
             <p className="font-semibold">raghav@automation-terminal</p>
           </div>
           <pre className="overflow-x-auto rounded-xl bg-slate-950/60 p-4 text-sm text-slate-200">
-{`const growthSystem = {
+            {`const growthSystem = {
   website: 'High-converting & fast',
   automation: 'WhatsApp + CRM workflows',
   leadGen: 'Funnels that scale',

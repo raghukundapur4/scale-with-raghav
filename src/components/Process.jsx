@@ -21,7 +21,7 @@ const steps = [
 
 function Process() {
   return (
-    <section id="process" className="py-24 bg-darker relative">
+    <section id="process" className="py-16 md:py-24 bg-darker relative">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -30,7 +30,7 @@ function Process() {
           className="mb-16 text-center"
         >
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Process</span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Our Comprehensive <span className="text-gradient">Process</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
