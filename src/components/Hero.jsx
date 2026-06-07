@@ -30,7 +30,7 @@ function Hero() {
               See Our Work
             </a>
             <a
-              href="https://wa.me/918971267102"
+              href="https://wa.me/918722947700"
               className="w-full sm:w-auto glass rounded-full px-8 py-4 font-bold text-white transition hover:bg-white/10 hover:glow-border"
             >
               Book A Call

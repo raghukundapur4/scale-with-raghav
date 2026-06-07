@@ -61,7 +61,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/918971267102" className="hover:text-primary transition-colors">
+                <a href="https://wa.me/918722947700" className="hover:text-primary transition-colors">
                   WhatsApp Chat
                 </a>
               </li>

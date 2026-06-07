@@ -70,7 +70,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/918971267102"
+            href="https://wa.me/918722947700"
             className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-darker transition hover:scale-105 hover:bg-emerald-400 glow-primary"
           >
             Book Free Call
@@ -106,7 +106,7 @@ function Navbar() {
                 </a>
               ))}
               <a
-                href="https://wa.me/918971267102"
+                href="https://wa.me/918722947700"
                 className="rounded-xl bg-primary px-4 py-2 text-center font-semibold text-darker"
                 onClick={() => setOpen(false)}
               >

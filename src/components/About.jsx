@@ -30,7 +30,7 @@ function About() {
             ))}
           </div>
           <a
-            href="https://wa.me/918971267102"
+            href="https://wa.me/918722947700"
             className="inline-block rounded-xl bg-primary px-5 py-3 font-semibold text-white transition hover:bg-blue-500"
           >
             Let's Connect
