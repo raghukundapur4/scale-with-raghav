@@ -12,7 +12,7 @@ const reasons = [
 
 function WhyUs() {
   return (
-    <section id="why-us" className="py-16 md:py-24 relative">
+    <section id="why-us" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">

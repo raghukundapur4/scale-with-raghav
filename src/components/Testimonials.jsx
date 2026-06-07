@@ -24,7 +24,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-darker">
+    <section id="testimonials" className="py-16 md:py-24 bg-darker relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
