@@ -53,9 +53,9 @@ function Navbar() {
             <path d="M29 4 L36 4 L36 11" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#glow)"/>
             <path d="M20 13 L36 4" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" filter="url(#glow)"/>
           </svg>
-          <span className="text-lg font-black tracking-tight">
-            <span className="text-white">Scale</span><span className="text-primary"> Raghav</span>
-          </span>
+          {/* <span className="text-lg font-black tracking-tight">
+            <span className="text-white">Scale With</span><span className="text-primary"> Raghav</span>
+          </span> */}
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
