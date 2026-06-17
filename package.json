@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://raghukundapur4.github.io/scale-with-raghav",
+  "homepage": "https://www.scalewithraghav.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
