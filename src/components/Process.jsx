@@ -1,65 +1,77 @@
 import { motion } from 'framer-motion'
+import SectionHeader from './ui/SectionHeader'
+import { Search, PenTool, Cpu, Play } from 'lucide-react'
 
 const steps = [
   {
-    title: 'Discovery and Strategy',
-    description: 'We dive deep into your business goals to create a customized strategy that guarantees results.',
+    icon: Search,
+    title: '1. Discovery & Audit',
+    description: 'We analyze your website, map lead drop-off points, and plan your custom CRM/WhatsApp architecture before design starts.',
   },
   {
-    title: 'UI/UX Design',
-    description: 'We craft stunning, user-centric interfaces that captivate your audience and drive engagement.',
+    icon: PenTool,
+    title: '2. UX Copy & Prototypes',
+    description: 'We write high-converting copy and design premium, custom wireframes—no stock templates or boilerplate themes.',
   },
   {
-    title: 'Custom Web Development',
-    description: 'We build high-performance, scalable websites tailored to your unique brand requirements.',
+    icon: Cpu,
+    title: '3. Technical Integration',
+    description: 'We code your website in React/Vite and connect your calendar booking engines, WhatsApp APIs, and lead spreadsheets.',
   },
   {
-    title: 'SEO & Performance Optimization',
-    description: 'We ensure your site ranks high on search engines and loads at lightning speed.',
+    icon: Play,
+    title: '4. Launch & Optimization',
+    description: 'We execute speed enhancements, set up Google Analytics event tracking tags, perform QA, and deploy.',
   },
 ]
 
 function Process() {
   return (
-    <section id="process" className="py-16 md:py-24 bg-darker relative overflow-hidden">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <span className="text-primary text-sm font-bold uppercase tracking-wider">Process</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            Our Comprehensive <span className="text-gradient">Process</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            We ensure your project gets handled with the utmost care from start to finish.
-          </p>
-        </motion.div>
+    <section id="process" className="section-padding bg-surface-muted border-y border-border">
+      <div className="site-container">
+        <SectionHeader
+          eyebrow="The Method"
+          title="From strategy call to launch in 14 days."
+          subtitle="A velocity-driven engineering process that guarantees your design, code, and systems are aligned perfectly."
+        />
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="glass-card rounded-3xl p-8 relative overflow-hidden group hover:glow-border border border-white/5"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                 <span className="text-8xl font-black text-primary">0{index + 1}</span>
-              </div>
-              <div className="relative z-10">
-                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary font-bold border border-primary/30">
-                  {index + 1}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-slate-400 leading-relaxed max-w-[90%]">{step.description}</p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="relative mt-20 max-w-5xl mx-auto">
+          {/* Connector line for mobile (vertical) */}
+          <div className="absolute left-[27px] top-6 bottom-6 w-0.5 border-l-2 border-dashed border-slate-200 lg:hidden" />
+          
+          {/* Connector line for desktop (horizontal) */}
+          <div className="absolute top-[28px] left-[5%] right-[5%] h-0.5 border-t-2 border-dashed border-slate-200 hidden lg:block z-0" />
+
+          <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+            {steps.map((step, index) => {
+              const Icon = step.icon
+              return (
+                <motion.article
+                  key={step.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.12 }}
+                  viewport={{ once: true }}
+                  className="relative flex gap-6 lg:flex-col lg:gap-0 z-10 group"
+                >
+                  {/* Step bubble icon */}
+                  <div className="shrink-0 mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white shadow-glow transition group-hover:scale-105 duration-300">
+                    <Icon size={22} strokeWidth={2.2} />
+                  </div>
+
+                  {/* Content details */}
+                  <div className="flex flex-col pt-1.5 lg:pt-0">
+                    <h3 className="font-display text-lg font-extrabold text-text-primary group-hover:text-accent transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.article>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

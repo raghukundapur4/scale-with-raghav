@@ -1,72 +1,104 @@
 import { motion } from 'framer-motion'
-import { Monitor, PenTool, Search, Share2 } from 'lucide-react'
+import { Bot, Monitor, PenTool, Search, Target } from 'lucide-react'
+import SectionHeader from './ui/SectionHeader'
 
 const services = [
   {
     icon: Monitor,
-    title: 'Custom Websites',
-    description: 'We build premium, high-converting websites and Shopify stores tailored to your brand.',
-    className: 'md:col-span-2 md:row-span-1 bg-gradient-to-br from-grayCustom to-dark border-primary/20',
+    title: 'Custom Websites & Shopify',
+    description: 'Premium React/Vite websites and high-performance Shopify stores that load in under 1 second and command premium trust.',
+    featured: true,
+    tags: ['Next.js / Vite', 'Shopify Dev', 'High-Trust Design'],
+  },
+  {
+    icon: Bot,
+    title: 'WhatsApp & CRM Automation',
+    description: 'Connect lead capture forms directly to WhatsApp Business API. Auto-route data, trigger SMS follow-ups, and sync CRM records instantly.',
+    tags: ['WhatsApp API', 'HubSpot / Airtable', 'Auto-Replies'],
+  },
+  {
+    icon: Target,
+    title: 'Lead Generation Funnels',
+    description: 'Custom landing pages, intake assessment forms, and booking paths tailored specifically to coaches, SaaS, and agency founders.',
+    tags: ['Ad Landing Pages', 'Lead Magnets', 'Vetted Funnels'],
   },
   {
     icon: PenTool,
-    title: 'UI/UX Design',
-    description: 'Stunning interfaces that captivate users and ensure seamless experiences.',
-    className: 'md:col-span-1 md:row-span-1 bg-darker border-white/5',
+    title: 'Conversion UI/UX Design',
+    description: 'High-fidelity wireframes, interactive user flows, and modern design systems engineered to optimize conversion rates.',
+    tags: ['Figma Mockups', 'Interaction Flow', 'Copywriting'],
   },
   {
     icon: Search,
-    title: 'SEO & Performance',
-    description: 'Dominate search rankings and ensure lightning-fast page load speeds.',
-    className: 'md:col-span-1 md:row-span-1 bg-darker border-white/5',
-  },
-  {
-    icon: Share2,
-    title: 'Social Media Management',
-    description: 'Engaging content and strategies to grow your brand presence online.',
-    className: 'md:col-span-2 md:row-span-1 bg-gradient-to-tr from-dark to-grayCustom border-primary/10',
+    title: 'SEO & Core Web Vitals',
+    description: 'Perfect performance audits, fast server responses, semantic coding structure, and optimization for Google and AI engines.',
+    tags: ['Core Web Vitals', 'On-Page SEO', 'AEO Readiness'],
   },
 ]
 
 function Services() {
-  return (
-    <section id="services" className="py-16 md:py-24 relative overflow-hidden">
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 h-96 w-96 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
-      
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <span className="text-primary text-sm font-bold uppercase tracking-wider">Services</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            What We Do <span className="text-gradient">Best</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            We offer full suite digital services designed to enhance your brand presence.
-          </p>
-        </motion.div>
+  const featured = services.find((s) => s.featured)
+  const others = services.filter((s) => !s.featured)
 
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 lg:gap-6">
-          {services.map((service, index) => {
+  return (
+    <section id="services" className="section-padding bg-surface">
+      <div className="site-container">
+        <SectionHeader
+          eyebrow="Services"
+          title="Everything your growth system needs."
+          subtitle="From premium frontend design to reliable backend automation — one partner, one cohesive build."
+        />
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {featured && (
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-3xl border border-accent/20 bg-gradient-to-br from-accent-light via-white to-white p-8 shadow-glow lg:col-span-2 lg:row-span-2"
+            >
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/10 blur-2xl" />
+              <div className="relative">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white shadow-sm">
+                  <Monitor size={28} />
+                </div>
+                <h3 className="mt-6 font-display text-2xl font-extrabold text-text-primary sm:text-3xl">
+                  {featured.title}
+                </h3>
+                <p className="mt-4 max-w-lg text-lg leading-8 text-text-secondary">{featured.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {featured.tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-accent/20 bg-white px-3 py-1 text-xs font-bold text-accent">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          )}
+
+          {others.map((service, index) => {
             const Icon = service.icon
             return (
               <motion.article
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ delay: index * 0.06 }}
                 viewport={{ once: true }}
-                className={`glass-card rounded-3xl p-8 flex flex-col justify-between group transition-all duration-300 hover:glow-border border ${service.className}`}
+                className="rounded-2xl border border-border bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
               >
-                <div>
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-darker transition-all duration-300">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{service.description}</p>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-light text-accent">
+                  <Icon size={22} />
+                </div>
+                <h3 className="mt-5 font-display text-lg font-extrabold text-text-primary">{service.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-text-secondary">{service.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span key={tag} className="rounded-full bg-surface-muted px-2.5 py-1 text-[11px] font-semibold text-text-muted">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </motion.article>
             )

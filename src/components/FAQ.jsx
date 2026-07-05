@@ -1,23 +1,28 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Plus, X } from 'lucide-react'
+import SectionHeader from './ui/SectionHeader'
 
 const faqs = [
   {
     q: 'How long does a website take to build?',
-    a: 'Most websites are completed within 7–14 days depending on complexity. Simple landing pages take 3–5 days, while full business websites take 10–14 days.',
+    a: 'Most landing pages and business websites are completed within 7-14 days depending on the number of pages, content readiness, and automation requirements.',
+  },
+  {
+    q: 'Can you build both the website and the automation?',
+    a: 'Yes. The site can be built together with WhatsApp follow-up, CRM routing, forms, reminders, and lead capture workflows so the full system works from day one.',
   },
   {
     q: 'Do you provide WhatsApp API integration?',
-    a: 'Yes! We provide complete WhatsApp Business API integration including automated replies, broadcast messages, lead follow-up sequences, and CRM integration.',
+    a: 'Yes. We can set up WhatsApp Business API flows for automated replies, lead follow-up sequences, broadcast campaigns, and CRM handoff.',
   },
   {
     q: 'Can you help us generate leads?',
-    a: 'Absolutely! We set up complete lead generation systems including Meta Ads funnels, optimized landing pages, lead capture forms, and automated follow-up sequences.',
+    a: 'Yes. We build landing pages, lead capture forms, Meta Ads-ready funnels, and automated follow-up sequences that help turn traffic into qualified conversations.',
   },
   {
     q: 'Do you provide ongoing support?',
-    a: 'Yes, we provide ongoing support and maintenance for all our clients. We offer monthly support packages to keep your systems running smoothly and up to date.',
+    a: 'Yes. Monthly support packages are available for website updates, performance checks, automation changes, and technical maintenance.',
   },
 ]
 
@@ -25,28 +30,28 @@ function FAQ() {
   const [active, setActive] = useState(null)
 
   return (
-    <section id="faq" className="py-20 md:py-32">
+    <section id="faq" className="section-padding bg-surface">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-white"
-        >
-          <span className="text-gradient">Frequently Asked Questions</span>
-        </motion.h2>
+        <SectionHeader
+          eyebrow="FAQ"
+          title="Common questions before we build."
+          subtitle="A quick overview of timelines, automation support, and what happens after launch."
+        />
 
-        <div className="space-y-4">
+        <div className="mt-12 divide-y divide-border rounded-2xl border border-border bg-white shadow-sm">
           {faqs.map((item, index) => {
             const open = active === index
             return (
-              <div key={item.q} className="glass rounded-xl p-5">
+              <div key={item.q} className="px-5 py-5 sm:px-7">
                 <button
                   className="flex w-full items-center justify-between gap-4 text-left"
                   onClick={() => setActive(open ? null : index)}
+                  aria-expanded={open}
                 >
-                  <span className="font-semibold">{item.q}</span>
-                  {open ? <X size={20} className="text-blue-300" /> : <Plus size={20} className="text-blue-300" />}
+                  <span className="font-display text-lg font-bold text-text-primary">{item.q}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent">
+                    {open ? <X size={18} /> : <Plus size={18} />}
+                  </span>
                 </button>
                 <AnimatePresence initial={false}>
                   {open && (
@@ -57,7 +62,7 @@ function FAQ() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-4 text-slate-300">{item.a}</p>
+                      <p className="max-w-3xl pt-4 leading-7 text-text-secondary">{item.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

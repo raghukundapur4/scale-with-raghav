@@ -2,21 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =====================
-   Base / Reset
-   ===================== */
 html {
-  /* Native smooth scrolling — no third-party scroll hijacking */
   scroll-behavior: smooth;
-  background-color: #050505;
-  /* Hide scrollbar on Firefox */
+  background-color: #ffffff;
   scrollbar-width: thin;
-  scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+  scrollbar-color: rgba(5, 150, 105, 0.35) transparent;
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-/* Hide scrollbar on Chrome/Safari but keep it functional */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -24,68 +18,59 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(16, 185, 129, 0.35);
+  background: rgba(5, 150, 105, 0.35);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.6);
+  background: rgba(5, 150, 105, 0.65);
 }
 
 body {
-  @apply bg-dark text-light font-sans antialiased;
-  /* Prevent layout shift from scrollbar appearing */
+  @apply bg-surface text-text-primary font-sans antialiased;
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-/* Smooth text selection highlight */
 ::selection {
-  background-color: rgba(16, 185, 129, 0.25);
-  color: #fff;
+  background-color: rgba(5, 150, 105, 0.18);
+  color: #0f172a;
 }
 
-/* =====================
-   Layout Utilities
-   ===================== */
-.glass {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.glass-card {
-  background: linear-gradient(145deg, rgba(23, 23, 23, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* =====================
-   Glow Effects
-   ===================== */
-.glow-primary {
-  box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
-}
-
-.glow-border {
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* =====================
-   Text & Gradient
-   ===================== */
 .text-gradient {
-  @apply bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-accent via-emerald-500 to-teal-500 bg-clip-text text-transparent;
 }
 
-.bg-radial-glow {
-  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+.section-padding {
+  @apply py-24 md:py-32;
 }
 
-/* =====================
-   Scroll Anchor Offset
-   Compensates for fixed navbar height
-   ===================== */
+.site-container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.site-container-narrow {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface-elevated;
+    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.06);
+  }
+
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-slate-300;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+  }
+}
+
+.mesh-bg {
+  background-image: theme('backgroundImage.mesh-hero');
+}
+
 [id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 88px;
 }
