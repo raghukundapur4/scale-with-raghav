@@ -65,6 +65,16 @@ function Footer() {
                   WhatsApp Chat
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/scale.with.raghav/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-emerald-300"
+                >
+                  Instagram · @scale.with.raghav
+                </a>
+              </li>
             </ul>
           </div>
         </div>
