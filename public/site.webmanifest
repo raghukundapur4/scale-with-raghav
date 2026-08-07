@@ -1,0 +1,17 @@
+{
+  "name": "Scale With Raghav",
+  "short_name": "ScaleWithRaghav",
+  "description": "Premium websites and automation systems that help modern businesses capture leads, follow up faster, and scale with confidence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#059669",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

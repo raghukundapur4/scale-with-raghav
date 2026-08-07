@@ -30,7 +30,7 @@ function FAQ() {
   const [active, setActive] = useState(null)
 
   return (
-    <section id="faq" className="section-padding bg-surface">
+    <section id="faq" aria-label="Frequently Asked Questions" className="section-padding bg-surface">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="FAQ"
@@ -41,12 +41,14 @@ function FAQ() {
         <div className="mt-12 divide-y divide-border rounded-2xl border border-border bg-white shadow-sm">
           {faqs.map((item, index) => {
             const open = active === index
+            const answerId = `faq-answer-${index}`
             return (
               <div key={item.q} className="px-5 py-5 sm:px-7">
                 <button
                   className="flex w-full items-center justify-between gap-4 text-left"
                   onClick={() => setActive(open ? null : index)}
                   aria-expanded={open}
+                  aria-controls={answerId}
                 >
                   <span className="font-display text-lg font-bold text-text-primary">{item.q}</span>
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent">
@@ -56,11 +58,14 @@ function FAQ() {
                 <AnimatePresence initial={false}>
                   {open && (
                     <motion.div
+                      id={answerId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
+                      role="region"
+                      aria-label={item.q}
                     >
                       <p className="max-w-3xl pt-4 leading-7 text-text-secondary">{item.a}</p>
                     </motion.div>

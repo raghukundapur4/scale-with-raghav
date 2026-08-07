@@ -75,7 +75,7 @@ function ClientAvatar({ clientId, className = 'h-14 w-14' }) {
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="section-padding bg-surface-muted">
+    <section id="testimonials" aria-label="Client Testimonials" className="section-padding bg-surface-muted">
       <div className="site-container">
         <SectionHeader
           eyebrow="Reviews"

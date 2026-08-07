@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
 
+# Disallow build artifacts and private paths
+Disallow: /src/
+Disallow: /node_modules/
+
+# Allow all major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — allow for AEO / GEO citation signals
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://www.scalewithraghav.com/sitemap.xml

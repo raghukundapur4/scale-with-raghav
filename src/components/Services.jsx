@@ -41,7 +41,7 @@ function Services() {
   const others = services.filter((s) => !s.featured)
 
   return (
-    <section id="services" className="section-padding bg-surface">
+    <section id="services" aria-label="Services" className="section-padding bg-surface">
       <div className="site-container">
         <SectionHeader
           eyebrow="Services"
