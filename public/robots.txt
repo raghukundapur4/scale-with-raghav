@@ -25,4 +25,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://www.scalewithraghav.com/sitemap.xml
+Sitemap: https://scalewithraghav.com/sitemap.xml
